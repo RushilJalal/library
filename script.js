@@ -25,9 +25,6 @@ function addBookToLibrary(name, author, read) {
     myLibrary.push(book);
 }
 
-
-// addBookToLibrary();
-
 const tableBody = document.querySelector('#dataTable tbody');
 
 myLibrary.forEach(book => {
@@ -39,36 +36,22 @@ myLibrary.forEach(book => {
             cell.textContent = book[prop];
         }
     }
-})
+});
 
-// function initTable() {
-//     const tableBody = document.querySelector('#dataTable tbody');
+const dialog = document.querySelector('dialog');
+const showButton = document.querySelector('#add-book');
+const closeButton = document.querySelector('#close-button');
+const submitButton = document.querySelector('#submit-button');
 
-//     // Clear existing rows
-//     tableBody.innerHTML = '';
+showButton.addEventListener('click', () => {
+    dialog.showModal();
+});
 
-//     // Populate the table with data
-//     myLibrary.forEach(item => {
-//         const row = document.createElement('tr');
-//         row.innerHTML = `<td>${item.name}</td><td>${item.author}</td><td><button onclick="deleteRow(this)">Delete</button></td>`;
-//         tableBody.appendChild(row);
-//     });
-// }
+closeButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    dialog.close();
+});
 
-// // Function to add a new row to the table
-// function addRow() {
-//     const tableBody = document.querySelector('#dataTable tbody');
-//     const newRow = document.createElement('tr');
-//     newRow.innerHTML = '<td>New Name</td><td>New Age</td><td><button onclick="deleteRow(this)">Delete</button></td>';
-//     tableBody.appendChild(newRow);
-// }
-
-// // Function to delete a row from the table
-// function deleteRow(button) {
-//     const row = button.closest('tr');
-//     const tableBody = document.querySelector('#dataTable tbody');
-//     tableBody.removeChild(row);
-// }
-
-// // Initialize the table when the page loads
-// initTable();
+submitButton.addEventListener('click', (e) => {
+    e.preventDefault();
+});

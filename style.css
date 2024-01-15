@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 table {
     border-collapse: collapse;
+    margin: 20px;
 }
 
 td,
@@ -7,4 +14,19 @@ th {
     border: 1px solid black;
     padding: 10px 20px;
     text-align: center;
+}
+
+dialog {
+    padding: 30px;
+    gap: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.controls {
+    margin: 20px;
 }

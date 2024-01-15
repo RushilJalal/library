@@ -10,10 +10,11 @@
 </head>
 
 <body>
-    <button id="add-row">Add row</button>
-    <button id="del-row">Delete row</button>
+    <div class="controls">
+        <button id="add-book">Add book</button>
+        <button id="del-book">Delete book</button>
+    </div>
     <table id="dataTable">
-
         <thead>
             <tr>
                 <th>Name: </th>
@@ -21,12 +22,35 @@
                 <th>Read?</th>
             </tr>
         </thead>
-
-        <tbody>
-
-        </tbody>
-
+        <tbody></tbody>
     </table>
+
+    <dialog>
+        <form method="dialog">
+            <button id="close-button">X</button>
+            <div class="name">
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name" autofocus>
+            </div>
+
+            <div class="author">
+                <label for="author">Author: </label>
+                <input type="text" id="author" name="author">
+            </div>
+
+            <div class="read">
+                <label for="read">Have read?
+                    <select name="read" id="read">
+                        <option value="default">Choose: </option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </label>
+            </div>
+
+            <button type="submit" id="submit-button">Submit</button>
+        </form>
+    </dialog>
 </body>
 
 </html>
