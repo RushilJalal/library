@@ -12,14 +12,14 @@
 <body>
     <div class="controls">
         <button id="add-book">Add book</button>
-        <button id="del-book">Delete book</button>
     </div>
     <table id="dataTable">
         <thead>
             <tr>
-                <th>Name: </th>
+                <th>Name</th>
                 <th>Author</th>
                 <th>Read?</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody></tbody>
@@ -40,8 +40,8 @@
 
             <div>Have read?</div>
             <select name="haveRead" id="haveRead">
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
+                <option value="true">True</option>
+                <option value="false">False</option>
             </select>
             <button type="submit" id="submit-button">Add Book</button>
         </form>

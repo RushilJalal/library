@@ -2,12 +2,12 @@ const myLibrary = [
     {
         name: 'Lord of the Rings',
         author: 'JRR Tolkein',
-        read: "no"
+        read: false
     },
     {
         name: 'Animal Farm',
         author: 'George Orwell',
-        read: "yes"
+        read: true
     }
 ];
 
@@ -37,6 +37,11 @@ function displayLibrary() {
         const readCell = document.createElement('td');
         readCell.textContent = book.read;
         row.appendChild(readCell);
+
+        const toggleRead = document.createElement('button');
+        toggleRead.textContent = 'Toggle read';
+        row.appendChild(toggleRead);
+        toggleRead.addEventListener('click', () => { })
 
         const removeButton = document.createElement('button');
         removeButton.textContent = "Remove"
@@ -77,6 +82,10 @@ function removeBook(index) {
     myLibrary.splice(index, 1);
     console.log(myLibrary);
     displayLibrary();
+}
+
+function toggleRead(index) {
+
 }
 
 displayLibrary(); //default library with 2 books
