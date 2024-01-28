@@ -46,7 +46,7 @@ function displayLibrary() {
         toggleread.addEventListener('click', () => toggleRead(index))
 
         const removeButton = document.createElement('button');
-        removeButton.textContent = "Remove"
+        removeButton.textContent = 'Remove';
         row.appendChild(removeButton);
         removeButton.addEventListener('click', () => removeBook(index));
 
@@ -86,8 +86,7 @@ function removeBook(index) {
 }
 
 function toggleRead(index) {
-    const value = myLibrary[index].read;
-    const boolValue = Boolean(value);
+    const boolValue = Boolean(myLibrary[index].read); // converts value attribute from string to boolean
     myLibrary[index].read = !boolValue;
     displayLibrary();
 }
