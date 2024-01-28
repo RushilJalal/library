@@ -48,7 +48,7 @@ closeButton.addEventListener('click', (e) => {
 function addBook() {
     const name = document.getElementById("name").value;
     const author = document.getElementById("author").value;
-    const read = document.querySelector('input[name="read"]:checked').value;
+    const read = document.getElementById('haveRead').value;
     const book = new Book(name, author, read);
     myLibrary.push(book);
     displayLibrary();
