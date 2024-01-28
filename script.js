@@ -11,8 +11,6 @@ const myLibrary = [
     }
 ];
 
-console.log(myLibrary);
-
 function Book(name, author, read) {
     this.name = name;
     this.author = author;
@@ -41,11 +39,13 @@ function displayLibrary() {
         row.appendChild(readCell);
 
         const toggleread = document.createElement('button');
+        toggleread.id = 'toggleread';
         toggleread.textContent = 'Toggle read';
         row.appendChild(toggleread);
         toggleread.addEventListener('click', () => toggleRead(index))
 
         const removeButton = document.createElement('button');
+        removeButton.id = 'removebutton'
         removeButton.textContent = 'Remove';
         row.appendChild(removeButton);
         removeButton.addEventListener('click', () => removeBook(index));
