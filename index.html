@@ -26,7 +26,7 @@
     </table>
 
     <dialog>
-        <form method="dialog">
+        <form method="dialog" id="bookform">
             <button id="close-button">X</button>
             <div class="name">
                 <label for="name">Name: </label>
@@ -38,15 +38,17 @@
                 <input type="text" id="author" name="author">
             </div>
 
-            <div class="read">
-                <label for="read">Have read?
-                    <select name="read" id="read">
-                        <option value="default">Choose: </option>
-                        <option value="yes">Yes</option>
-                        <option value="no">No</option>
-                    </select>
-                </label>
-            </div>
+            <div>Have read?</div>
+            <ul class="read">
+                <li>
+                    <label for="yes">Yes</label>
+                    <input type="radio" id="yes" value="yes" name="read">
+                </li>
+                <li>
+                    <label for="no">No</label>
+                    <input type="radio" id="no" value="no" name="read">
+                </li>
+            </ul>
 
             <button type="submit" id="submit-button">Submit</button>
         </form>

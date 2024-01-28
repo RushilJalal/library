@@ -21,6 +21,8 @@ dialog {
     gap: 20px;
 }
 
+/* do not use display:flex for dialog */
+
 form {
     display: flex;
     flex-direction: column;
@@ -29,4 +31,13 @@ form {
 
 .controls {
     margin: 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+.read {
+    display: flex;
+    gap: 20px;
 }
