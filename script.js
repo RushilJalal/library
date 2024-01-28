@@ -21,11 +21,27 @@ const tableBody = document.querySelector('#dataTable tbody');
 
 function displayLibrary() {
     const tableBody = document.querySelector('#dataTable tbody');
-    tableBody.innerHTML = ''; // Clear existing rows
+    tableBody.textContent = ''; // Clear existing rows in table
 
-    myLibrary.forEach(book => {
+    //display array of objects
+    myLibrary.forEach((book, index) => {
         const row = document.createElement('tr');
-        row.innerHTML = `<td>${book.name}</td><td>${book.author}</td><td>${book.read}</td>`;
+        const titleCell = document.createElement('td');
+        titleCell.textContent = book.name;
+        row.appendChild(titleCell);
+
+        const authorCell = document.createElement('td');
+        authorCell.textContent = book.author;
+        row.appendChild(authorCell);
+
+        const readCell = document.createElement('td');
+        readCell.textContent = book.read;
+        row.appendChild(readCell);
+
+        const removeButton = document.createElement('button');
+        removeButton.textContent = "Remove"
+        row.appendChild(removeButton);
+        removeButton.addEventListener('click', () => removeBook(index));
         tableBody.appendChild(row);
     });
 }
@@ -55,6 +71,12 @@ function addBook() {
     console.log(myLibrary);
     bookform.reset();
     dialog.close();
+}
+
+function removeBook(index) {
+    myLibrary.splice(index, 1);
+    console.log(myLibrary);
+    displayLibrary();
 }
 
 displayLibrary(); //default library with 2 books
