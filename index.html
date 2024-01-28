@@ -26,7 +26,7 @@
     </table>
 
     <dialog>
-        <form method="dialog" id="bookform">
+        <form method="dialog" id="bookform" onsubmit="addBook(); return false;">
             <button id="close-button">X</button>
             <div class="name">
                 <label for="name">Name: </label>
@@ -42,15 +42,15 @@
             <ul class="read">
                 <li>
                     <label for="yes">Yes</label>
-                    <input type="radio" id="yes" value="yes" name="read">
+                    <input type="radio" id="yes" value="yes" name="read" required>
                 </li>
                 <li>
                     <label for="no">No</label>
-                    <input type="radio" id="no" value="no" name="read">
+                    <input type="radio" id="no" value="no" name="read" required>
                 </li>
             </ul>
 
-            <button type="submit" id="submit-button">Submit</button>
+            <button type="submit" id="submit-button">Add Book</button>
         </form>
     </dialog>
 </body>

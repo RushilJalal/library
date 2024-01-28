@@ -2,12 +2,12 @@ const myLibrary = [
     {
         name: 'Lord of the Rings',
         author: 'JRR Tolkein',
-        read: false
+        read: "no"
     },
     {
         name: 'Animal Farm',
         author: 'George Orwell',
-        read: true
+        read: "yes"
     }
 ];
 
@@ -15,31 +15,20 @@ function Book(name, author, read) {
     this.name = name;
     this.author = author;
     this.read = read;
-    // this.info = function () {
-    //     return `Book: ${name} \n Author: ${author} \n Have read: ${read}`;
-    // }
-}
-
-function addBookToLibrary(name, author, read) {
-    const book = new Book(name, author, read);
-    myLibrary.push(book);
 }
 
 const tableBody = document.querySelector('#dataTable tbody');
 
-function book_display() {
+function displayLibrary() {
+    const tableBody = document.querySelector('#dataTable tbody');
+    tableBody.innerHTML = ''; // Clear existing rows
+
     myLibrary.forEach(book => {
-        const row = tableBody.insertRow();
-        for (const prop in book) {
-            if (book.hasOwnProperty(prop)) {
-                const cell = row.insertCell();
-                cell.textContent = book[prop];
-            }
-        }
+        const row = document.createElement('tr');
+        row.innerHTML = `<td>${book.name}</td><td>${book.author}</td><td>${book.read}</td>`;
+        tableBody.appendChild(row);
     });
 }
-
-// book_display();
 
 const dialog = document.querySelector('dialog');
 const showButton = document.querySelector('#add-book');
@@ -56,15 +45,18 @@ closeButton.addEventListener('click', (e) => {
     dialog.close();
 });
 
-submitButton.addEventListener('click', (e) => {
-    e.preventDefault();
+function addBook() {
     const name = document.getElementById("name").value;
     const author = document.getElementById("author").value;
-    const read = true;
-    addBookToLibrary(name, author, read);
+    const read = document.querySelector('input[name="read"]:checked').value;
+    const book = new Book(name, author, read);
+    myLibrary.push(book);
+    displayLibrary();
     console.log(myLibrary);
-    dialog.close();
-    book_display();
     bookform.reset();
-});
+    dialog.close();
+}
+
+displayLibrary(); //default library with 2 books
+
 
