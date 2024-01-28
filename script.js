@@ -11,6 +11,8 @@ const myLibrary = [
     }
 ];
 
+console.log(myLibrary);
+
 function Book(name, author, read) {
     this.name = name;
     this.author = author;
@@ -38,15 +40,16 @@ function displayLibrary() {
         readCell.textContent = book.read;
         row.appendChild(readCell);
 
-        const toggleRead = document.createElement('button');
-        toggleRead.textContent = 'Toggle read';
-        row.appendChild(toggleRead);
-        toggleRead.addEventListener('click', () => { })
+        const toggleread = document.createElement('button');
+        toggleread.textContent = 'Toggle read';
+        row.appendChild(toggleread);
+        toggleread.addEventListener('click', () => toggleRead(index))
 
         const removeButton = document.createElement('button');
         removeButton.textContent = "Remove"
         row.appendChild(removeButton);
         removeButton.addEventListener('click', () => removeBook(index));
+
         tableBody.appendChild(row);
     });
 }
@@ -73,19 +76,20 @@ function addBook() {
     const book = new Book(name, author, read);
     myLibrary.push(book);
     displayLibrary();
-    console.log(myLibrary);
     bookform.reset();
     dialog.close();
 }
 
 function removeBook(index) {
     myLibrary.splice(index, 1);
-    console.log(myLibrary);
     displayLibrary();
 }
 
 function toggleRead(index) {
-
+    const value = myLibrary[index].read;
+    const boolValue = Boolean(value);
+    myLibrary[index].read = !boolValue;
+    displayLibrary();
 }
 
 displayLibrary(); //default library with 2 books
