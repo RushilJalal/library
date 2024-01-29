@@ -26,16 +26,49 @@ body {
 }
 
 button {
-    padding: 10px 20px;
     background-color: #4caf50;
     color: #fff;
     border: none;
     cursor: pointer;
     font-size: 16px;
+    padding: 10px 20px;
 }
+
+/* button#add-book {} */
 
 button:hover {
     background-color: #45a049;
+}
+
+button#submit-button,
+button#close-button {
+    margin: 10px;
+    font-size: 16px;
+    height: auto;
+    width: auto;
+}
+
+button#submit-button:hover {
+    background-color: #45a049;
+}
+
+button#close-button {
+    background-color: red;
+    padding: 5px 10px
+}
+
+button#close-button:hover {
+    background-color: rgb(159, 26, 26);
+}
+
+button#toggleread {
+    width: 50%;
+    height: 45px;
+}
+
+button#removebutton {
+    width: 50%;
+    height: 45px;
 }
 
 table {
@@ -43,7 +76,7 @@ table {
     border-collapse: collapse;
     margin-bottom: 20px;
     background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 th,
@@ -56,6 +89,11 @@ td {
 th {
     background-color: #4caf50;
     color: white;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+    width: 300px;
 }
 
 form {
@@ -80,25 +118,4 @@ select {
     width: 100%;
     box-sizing: border-box;
     font-size: 16px;
-}
-
-button#submit-button,
-button#close-button {
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    padding: 10px 20px;
-    font-size: 16px;
-}
-
-button#submit-button:hover {
-    background-color: #45a049;
-}
-
-button#close-button {
-    background-color: red;
-}
-
-button#close-button:hover {
-    background-color: rgb(159, 26, 26);
 }

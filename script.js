@@ -50,6 +50,9 @@ function displayLibrary() {
         row.appendChild(removeButton);
         removeButton.addEventListener('click', () => removeBook(index));
 
+        toggleread.classList.add('action-column');
+        removeButton.classList.add('action-column');        
+
         tableBody.appendChild(row);
     });
 }
