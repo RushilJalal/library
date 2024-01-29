@@ -23,7 +23,7 @@ function displayLibrary() {
     const tableBody = document.querySelector('#dataTable tbody');
     tableBody.textContent = ''; // Clear existing rows in table
 
-    //display array of objects
+    //display array of objects in tabular form
     myLibrary.forEach((book, index) => {
         const row = document.createElement('tr');
         const titleCell = document.createElement('td');
@@ -50,9 +50,6 @@ function displayLibrary() {
         row.appendChild(removeButton);
         removeButton.addEventListener('click', () => removeBook(index));
 
-        toggleread.classList.add('action-column');
-        removeButton.classList.add('action-column');        
-
         tableBody.appendChild(row);
     });
 }
@@ -63,9 +60,7 @@ const closeButton = document.querySelector('#close-button');
 const submitButton = document.querySelector('#submit-button');
 const bookform = document.querySelector("#bookform");
 
-showButton.addEventListener('click', () => {
-    dialog.showModal();
-});
+showButton.addEventListener('click', () => dialog.showModal());
 
 closeButton.addEventListener('click', (e) => {
     e.preventDefault();
@@ -90,7 +85,7 @@ function removeBook(index) {
 
 function toggleRead(index) {
     const boolValue = Boolean(myLibrary[index].read); // converts value attribute from string to boolean
-    myLibrary[index].read = !boolValue;
+    myLibrary[index].read = !boolValue; //toggles the boolean value
     displayLibrary();
 }
 

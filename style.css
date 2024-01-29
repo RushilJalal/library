@@ -34,8 +34,6 @@ button {
     padding: 10px 20px;
 }
 
-/* button#add-book {} */
-
 button:hover {
     background-color: #45a049;
 }
@@ -93,7 +91,7 @@ th {
 
 th:nth-child(4),
 td:nth-child(4) {
-    width: 300px;
+    width: 250px;
 }
 
 form {
