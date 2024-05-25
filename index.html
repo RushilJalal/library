@@ -1,54 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-    <link rel="icon" href="imgs/book.png">
-</head>
+    <link rel="icon" href="imgs/book.png" />
+  </head>
 
-<body>
+  <body>
     <h1 id="heading">Library</h1>
     <div class="controls">
-        <button id="add-book">Add book</button>
+      <button id="add-book">Add book</button>
     </div>
     <table id="dataTable">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Author</th>
-                <th>Read?</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Author</th>
+          <th>Read?</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
     </table>
 
     <dialog>
-        <form method="dialog" id="bookform" onsubmit="addBook(); return false;">
-            <button id="close-button">X</button>
-            <div class="name">
-                <label for="name">Name: </label>
-                <input type="text" id="name" name="name" autofocus>
-            </div>
+      <form method="dialog" id="bookform" onsubmit="addBook(); return false;">
+        <button id="close-button">X</button>
+        <div class="name">
+          <label for="name">Name: </label>
+          <input type="text" id="name" name="name" autofocus required />
+        </div>
 
-            <div class="author">
-                <label for="author">Author: </label>
-                <input type="text" id="author" name="author">
-            </div>
+        <div class="author">
+          <label for="author">Author: </label>
+          <input type="text" id="author" name="author" required />
+        </div>
 
-            <div>Have read?</div>
-            <select name="haveRead" id="haveRead">
-                <option value="true">True</option>
-                <option value="false">False</option>
-            </select>
+        <div>Have read?</div>
+        <select name="haveRead" id="haveRead" required>
+          <option value="true">True</option>
+          <option value="false">False</option>
+        </select>
 
-            <button type="submit" id="submit-button">Add Book</button>
-        </form>
+        <button type="submit" id="submit-button">Add Book</button>
+      </form>
     </dialog>
-</body>
-
+  </body>
 </html>
